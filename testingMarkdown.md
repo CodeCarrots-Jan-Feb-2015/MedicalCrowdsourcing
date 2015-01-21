@@ -2,7 +2,7 @@
 <h4>Web Application to provide transparency to the cost of a medical procedure in a geographic area in the US<h4> 
 <h4> 6 week project with Geek Girls Carrots<h4>
 
-### GENERAL IDEA ###
+##GENERAL IDEA
 ---
 ####
 + I broke my toe.
