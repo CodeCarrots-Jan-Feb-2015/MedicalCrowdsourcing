@@ -4,10 +4,9 @@
 
 GENERAL IDEA:
 ---
-
-  * I broke my toe.
-  * I live in a specific ZipCode. 
-  * I want estimated cost for the procedure depending on where I decide to go.
+ I broke my toe.
+ I live in a specific ZipCode. 
+ I want estimated cost for the procedure depending on where I decide to go.
 
 
 <h4> HOW DO I GET THAT INFORMATION?</h4>	
