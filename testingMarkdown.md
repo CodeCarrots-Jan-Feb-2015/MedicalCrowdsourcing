@@ -2,21 +2,12 @@
 <h4>Web Application to provide transparency to the cost of a medical procedure in a geographic area in the US<h4> 
 <h4> 6 week project with Geek Girls Carrots<h4>
 
-Skills
----
-
-* SOFTWARE:	
-    * Advanced user of MS Office (Excel, Power Point, and Word).
-    * User of Access and SQL. 
-    * Intro to Java Development.
 
 
-
-
-##### 
-	* I broke my toe. 
-	* I live in a specific ZipCode. 
-	* I want estimated cost for the procedure depending on where I decide to go.
+#####
+1	I broke my toe. 
+2	I live in a specific ZipCode. 
+3	I want estimated cost for the procedure depending on where I decide to go.
 
 
 ## GENERAL IDEA
