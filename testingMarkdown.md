@@ -3,9 +3,9 @@
 <h4> 6 week project with Geek Girls Carrots<h4>
 
 <h3> GENERAL IDEA OF "I BROKE MY TOE" <h3>
-* I broke my toe. 
-* I live in a specific ZipCode. 
-* I want estimated cost for the procedure depending on where I decide to go.
+*I broke my toe. 
+*I live in a specific ZipCode. 
+*I want estimated cost for the procedure depending on where I decide to go.
 
 
 
