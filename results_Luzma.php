@@ -124,7 +124,6 @@ $conn->close();
                 <th>Address</th>
                 <th>City</th>
                 <th>State</th>
-                <th>Zip Code</th>
                 <th>Avg Medicare Payments</th>
                 <th># of Patients</th>                
                 <th>Satisfaction Rating</th>
@@ -157,10 +156,9 @@ if ($result->num_rows > 0) {
       . "<td>" . $row["ProcedureName"] . "</td>"
       . "<td>" . $row["MedicalFacility"] . "</td>"
       . "<td>" . $row["Address"] . "</td>"
-      . "<td>" . $row["City"] . "</td>"
+      . "<td>" . $row["City"] . "</td>" 
       . "<td>" . $row["State"] . "</td>"
-      . "<td>" . $row["Zipcode"] . "</td>"
-      . "<td>" . $row["AverageMedicarePayments"] . "</td>"      
+      . "<td>" . $row["AverageTotalPayments"] . "</td>"      
       . "<td>" . $row["Instances"] . "</td>"
       . "<td>" . "</td>"
       . "</tr>";
