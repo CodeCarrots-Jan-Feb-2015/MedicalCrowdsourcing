@@ -114,81 +114,79 @@ $conn->close();
 */
 ?>  
 
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12"></div>
-            <table style="width:100%">
-              <tr>
-                <th>Medical Procedure</th>
-                <th>Facility</th>    
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
-                <th>Avg Medicare Payments</th>
-                <th># of Patients</th>                
-                <th>Satisfaction Rating</th>
-              </tr>
-<?php
-$servername = "localhost";
-$username = "sandbox1_carrot1";
-$password = "VitaminA104%";
-$dbname = "sandbox1_carrot1";
-$ZipCode=$_GET["ZipCode"];
-$Diagnosis=$_GET["Diagnosis"];
+</div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12"></div>
+  <table style="width:100%">
+    <tr>
+      <th>Medical Procedure</th>
+      <th>Facility</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Avg Medicare Payments</th>
+      <th># of Patients</th>                
+      <th>Satisfaction Rating</th>
+    </tr>
+    <?php
+    $servername = "localhost";
+    $username = "sandbox1_carrot1";
+    $password = "VitaminA104%";
+    $dbname = "sandbox1_carrot1";
+    $Location=$_GET["Location"];
+    $Diagnosis=$_GET["Diagnosis"];
 //echo $ZipCode;
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    } 
 //$sql = "SELECT * FROM 'Main_Medical_Table'";
-$sql = "CALL Sp_GetCost($Diagnosis, $ZipCode)";
+    $sql = "CALL Sp_GetCost('$Diagnosis', '$Location')";
 
 //SELECT * FROM `Main_Medical_Table` WHERE ZipCode=$ZipCode";
-$result = $conn->query($sql);
- 
+    $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+
+    if ($result->num_rows > 0) {
     // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "<tr>" 
-      . "<td>" . $row["ProcedureName"] . "</td>"
-      . "<td>" . $row["MedicalFacility"] . "</td>"
-      . "<td>" . $row["Address"] . "</td>"
-      . "<td>" . $row["City"] . "</td>"
-      . "<td>" . $row["State"] . "</td>"
-      . "<td>" . $row["Zipcode"] . "</td>"
-      . "<td>" . $row["Instances"] . "</td>"
-      . "<td>" . $row["AverageMedicarePayments"] . "</td>"
-      . "<td>" . $row["Instances"] . "</td>"
-      . "</tr>";
-  } 
-  echo "</table>";
-} else {
-  echo "0 results";
-} 
-$conn->close();
-?>
+      while($row = $result->fetch_assoc()) {
+        echo "<tr>" 
+        . "<td>" . $row["ProcedureName"] . "</td>"
+        . "<td>" . $row["MedicalFacility"] . "</td>"
+        . "<td>" . $row["City"] . "</td>" 
+        . "<td>" . $row["State"] . "</td>"
+        . "<td align='center'>" . $row["AverageTotalPayments"] . "</td>"      
+        . "<td>" . $row["Instances"] . "</td>"
+        . "<td>" . $row["Rating"] . "</td>"        
+        . "<td>" . "</td>"
+        . "</tr>";
+      } 
+      echo "</table>";
+    } else {
+      echo "</table>";
+      echo "0 results";
+    } 
+    $conn->close();
+    ?>
 
 
 
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-            </div>  
-
-            <div class="col-md-6 col-sm-6 col-xs-12">               
-            </div>
-
-          </div>
-        </div>
-
-
-      </div><!-- /.content -->
-    </div>
   </div>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+    </div>  
+
+    <div class="col-md-6 col-sm-6 col-xs-12">               
+    </div>
+
+  </div>
+</div>
+
+
+</div><!-- /.content -->
+</div>
+</div>
 </div><!-- /.container -->
 
 <div id="footer" class="section">

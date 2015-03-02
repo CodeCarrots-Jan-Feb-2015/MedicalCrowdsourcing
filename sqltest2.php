@@ -11,9 +11,9 @@ SQL test
 
 <?php
 
-$ailment=$_GET["ailment"];
+$Ailment_Name=$_GET["ailment"];
 $Part_of_Body=$_GET["body_part"];
-$zipcode=$_GET["zipcode"];
+$ZipCode=$_GET["zipcode"];
 
 
 $con=mysqli_connect("localhost","sandbox1_carrot1","VitaminA104%","sandbox1_carrot1");
@@ -25,7 +25,8 @@ if (mysqli_connect_errno())
 
 // Perform queries 
 //mysqli_query($con,"SELECT * FROM Main_Medical_Table");
-mysqli_query($con,"insert into Main_Medical_Table (Ailment_Name, Part_of_Body, Cost, Zipcode) values ('".$ailment."', '".$Part_of_Body."', '500', '".$zipcode."')");
+mysqli_query($con,"insert into Main_Medical_Table (Ailment_Name, Part_of_Body, Cost, ZipCode) 
+	values ('".$Ailment_Name."', '".$Part_of_Body."', '500', '".$ZipCode."')");
 
 
 mysqli_close($con);
@@ -35,3 +36,4 @@ mysqli_close($con);
 
 </body>
 </html>
+
