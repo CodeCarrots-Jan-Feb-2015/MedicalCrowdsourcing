@@ -49,7 +49,9 @@
     </div><!-- /.container -->
 
     <!-- Search Section -->
-    <div id="searchresults" class="section gray">
+   /div>
+
+    <<div id="searchresults" class="section gray">
       <div class="container">
 
         <div class="content">
@@ -69,7 +71,7 @@ $facilitytype=$_GET["facilitytype"];
 $name=$_GET["name"];
 $cost=$_GET["cost"];
 $proceduredate=$_GET["proceduredate"];
-$satisfaction=$_GET["satisfaction"];
+$satisfaction=$_GET["rating"];
 $tag=$_GET["tag"];
 
 $con=mysqli_connect("localhost","sandbox1_carrot1","VitaminA104%","sandbox1_carrot1");
@@ -79,7 +81,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 $sql="call sp_UpLoadMedicalProcedure('$name','$proceduredate/01/01','$tag','$facility','$facilitytype','$facilitycity','$facilitystate',$cost, $satisfaction);";
-
+//echo $sql;
 
 mysqli_query($con, $sql);
 

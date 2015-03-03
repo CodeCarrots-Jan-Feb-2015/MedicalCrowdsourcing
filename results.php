@@ -132,7 +132,7 @@ $conn->close();
     $username = "sandbox1_carrot1";
     $password = "VitaminA104%";
     $dbname = "sandbox1_carrot1";
-    $Location=$_GET["Location"];
+    $Location=$_GET["ZipCode"];
     $Diagnosis=$_GET["Diagnosis"];
 //echo $ZipCode;
 // Create connection
